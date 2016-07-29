@@ -14,8 +14,12 @@ public class test {
                 	conn_id.addRequestProperty("Content-Type", "application/json"); 
 			OutputStream os = conn_id.getOutputStream();
 			OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
-        	        //osw.write("{\"AttachStdin\": false, \"AttachStdout\": true, \"AttachStderr\": true, \"Tty\": false, \"Cmd\": [ \"ls\",\"-al\"]}");
-        	        osw.write("{\"AttachStdin\": false, \"AttachStdout\": true, \"AttachStderr\": true, \"Tty\": false, \"Cmd\": [ \"python\", \"/tmp/Api-Invokers/createCluster.py\", \"10.10.30.235\", \"10.10.30.234\" ]}");
+			String ip = "10.10.30.235";
+			String vip = "10.10.30.234";
+			String numNodes = "9";
+        	        String message = "{\"AttachStdin\": false, \"AttachStdout\": true, \"AttachStderr\": true, \"Tty\": false, \"Cmd\": [ \"python\", \"/tmp/Api-Invokers/createCluster.py\", \""+ip+"\", \""+vip+"\", \""+numNodes+"\" ]}";
+			System.out.println(message);
+			osw.write(message);
 			osw.flush();
 			osw.close();
 					
