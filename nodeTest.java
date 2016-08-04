@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-
 public class nodeTest {
 	public static void main(String args[]){
 		/*nodes = []
@@ -21,9 +20,23 @@ public class nodeTest {
 		String[] split = nodeIPs.split(",");
 		for (String node: split){
 			if (!node.contains("-")){
-				node.add(node);
+				nodes.add(node);
+			}
+			else{
+				String[] m = node.split("-");
+				//String[] first = m[0].split(".");
+				String n = m[0];
+				String[] c = n.split(".");
+				//String first = c[0]+"."+c[1]+"."+c[2];
+				String a = m[0];
+				String b = m[1];
+				System.out.println(Arrays.toString(m));
+				System.out.println(n);
+				System.out.println(Arrays.toString(c));				
+				//System.out.println(first);
 			}
 		}
-		System.out.println(Arrays.toString(split));
+		String test = String.join(",",nodes);
+		//System.out.println(test);
 	}
 }
