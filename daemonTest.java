@@ -19,9 +19,9 @@ public class daemonTest {
 		params.add("/tmp/cluster.txt");
 		System.out.println(Arrays.toString(params.toArray()));
 		System.out.println(runCommand(params));
-		/*
+		
 		try{
-			Thread.sleep(3000);
+			Thread.sleep(20000);
 		} catch(InterruptedException I){
 			System.out.println("I");
 		}
@@ -30,7 +30,7 @@ public class daemonTest {
 		params.add("rm");
 		params.add("/tmp/cluster.txt");
 		System.out.println(Arrays.toString(params.toArray()));
-		System.out.println(runCommand(params));*/
+		System.out.println(runCommand(params));
 							
 	}
 
