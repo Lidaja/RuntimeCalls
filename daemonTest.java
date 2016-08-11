@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 //import java.lang.StringBuffer;
 public class daemonTest {
 	public static void main(String args[]){
-	
 		String ip = "10.10.30.235";
 		String vip = "10.10.30.234";
 		ArrayList<String> params = new ArrayList<String>();
@@ -19,7 +18,7 @@ public class daemonTest {
 		params.add("/tmp/cluster.txt");
 		System.out.println(Arrays.toString(params.toArray()));
 		System.out.println(runCommand(params));
-		/*
+		
 		try{
 			Thread.sleep(3000);
 		} catch(InterruptedException I){
@@ -30,10 +29,8 @@ public class daemonTest {
 		params.add("rm");
 		params.add("/tmp/cluster.txt");
 		System.out.println(Arrays.toString(params.toArray()));
-		System.out.println(runCommand(params));*/
-							
+		System.out.println(runCommand(params));
 	}
-
 	public static StringBuilder getStringBuilder(HttpURLConnection con){
 		StringBuilder sb = new StringBuilder();
 		try{
@@ -71,10 +68,7 @@ public class daemonTest {
 			System.out.println(message);
 			StringBuilder sb = getStringBuilder(conn);
 			String ID = sb.toString().substring(7,sb.toString().length()-3);
-
-
 			URL url_start = new URL("http://10.10.30.235:2375/exec/"+ID+"/start");
-		
 			HttpURLConnection conn_start = (HttpURLConnection)url_start.openConnection();
 			conn_start.setDoOutput(true);
                 	conn_start.setRequestMethod( "POST" );
